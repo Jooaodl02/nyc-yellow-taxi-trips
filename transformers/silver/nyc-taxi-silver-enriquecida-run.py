@@ -94,7 +94,7 @@ def main():
     df_join_final = enrich_with_zones(df_trips, df_zones_pu, df_zones_do, year, month)
 
     df_join_final.writeTo("glue_catalog.nyctaxi_silver.nyc_taxi_yellow_silver_enriquecida").overwritePartitions()
-
+    job.commit()
 
 if __name__ == "__main__":
     main()

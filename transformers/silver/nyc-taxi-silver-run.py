@@ -66,8 +66,12 @@ def transform_silver(df_bronze, year, month):
         "month",
         "year"
     )
-
-    return df.na.drop(subset=["vendor", "rate_type", "payment_type"])
+    
+    return df.filter(
+    (col("vendor") != "Unknown")
+    & (col("rate_type") != "Unknown")
+    & (col("payment_type") != "Unknown")
+    )
 
 
 def main():
