@@ -16,6 +16,8 @@ O projeto segue a arquitetura medallion, com três camadas:
 
 Cada camada grava em tabelas Apache Iceberg no S3, registradas no Glue Data Catalog e consultáveis via Athena. A orquestração fica por conta do Step Functions.
 
+![Arquitetura medallion do pipeline](docs/arquitetura-medalhao.png)
+
 ## Stack
 
 - **AWS Lambda** — ingestão dos arquivos da TLC
